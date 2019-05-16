@@ -41,34 +41,31 @@ public class CarroController {
 	@GetMapping("/carros/{id}")
 	public Carro getCarroById(@PathVariable(value = "id") Long carroId) {
 		return carroRepository.findById(carroId)
-	            .orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
+				.orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
 	}
 
 	// Atualizando Carro
 	@PutMapping("/carros/{id}")
-	public Carro updateCarro(@PathVariable(value = "id") Long carroId,
-	                                        @Valid @RequestBody Carro carroDetails) {
+	public Carro updateCarro(@PathVariable(value = "id") Long carroId, @Valid @RequestBody Carro carroDetails) {
 
-	    Carro carro = carroRepository.findById(carroId)
-	            .orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
+		carroRepository.findById(carroId).orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
 
-	    carro.setModelo(carroDetails.getModelo());
-	    carro.setMarca(carroDetails.getMarca());
-	    carro.setAno(carroDetails.getAno());
-	    carro.setCategoria(carro.getCategoria());
+//	    carro.setModelo(carroDetails.getModelo());
+//	    carro.setMarca(carroDetails.getMarca());
+//	    carro.setAno(carroDetails.getAno());
+//	    carro.setCategoria(carro.getCategoria());
 
-	    Carro updatedCarro = carroRepository.save(carro);
-	    return updatedCarro;
+		return carroRepository.save(carroDetails);
 	}
-	
-	// Delete a Note
+
+	// Deletar um Carro
 	@DeleteMapping("/carros/{id}")
-	public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long carroId) {
-	    Carro carro = carroRepository.findById(carroId)
-	            .orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
+	public ResponseEntity<?> deleteCarro(@PathVariable(value = "id") Long carroId) {
+		Carro carro = carroRepository.findById(carroId)
+				.orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
 
-	    carroRepository.delete(carro);
+		carroRepository.delete(carro);
 
-	    return ResponseEntity.ok().build();
+		return ResponseEntity.ok().build();
 	}
 }

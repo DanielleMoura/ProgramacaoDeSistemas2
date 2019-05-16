@@ -34,7 +34,7 @@ public class Cidade {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public String getPaís() {
+	public String getPais() {
 		return pais;
 	}
 	public void setPais(String pais) {
