@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h1>Carros</h1>
+  </div>
+  <div class="panel-body">
+      <table class="table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>MODELO</th>
+                  <th>MARCA</th>
+                  <th>ANO</th>
+                  <th>CATEGORIA</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let carro of carros">
+                  <td>{{carro.id}}</td>
+                  <td>{{carro.modelo}}</td>
+                  <td>{{carro.marca}}</td>
+                  <td>{{carro.ano}}</td>
+                  <td>{{carro.categoria}}</td>
+                  <td><button (click)="updateCarro(carro.id)">Edit</button></td>
+                  <td><button (click)="deleteCarro(carro.id)">Delete</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

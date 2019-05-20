@@ -1,0 +1,25 @@
+<div *ngIf="carro">
+  <div>
+      <label>ID: </label> {{carro.ano}}
+  </div>
+  <div>
+      <label>Modelo: </label> {{carro.modelo}}
+  </div>
+  <div>
+      <label>Marca: </label> {{carro.marca}}
+  </div>
+  <div>
+      <label>Ano: </label> {{carro.ano}}
+  </div>
+  <div>
+    <label>Categoria: </label> {{carro.categoria}}
+</div>
+
+  <span class="button is-small btn-primary" *ngIf='carro.active' (click)='updateActive(false)'>Inactive</span>
+
+  <span class="button is-small btn-primary" *ngIf='!carro.active' (click)='updateActive(true)'>Active</span>
+
+  <span class="button is-small btn-danger" (click)='deleteCarro()'>Delete</span>
+
+  <hr/>
+</div>
