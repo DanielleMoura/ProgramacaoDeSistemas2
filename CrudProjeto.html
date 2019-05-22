@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<hmtl>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type = "text/css" rel="stylesheet" href="crud.css">
+</head>
+<body>
+<nav>
+  <div class="menu" id="myTopnav">
+          <a id="Home" class="active" href="#">Home</a>
+          <a id="Home" onmouseover="trocaHome()" href="#">Criar</a>
+          <a id="Carro" onmouseover="trocaCarro()" href="#">Deletar</a>
+          <a id="Cidades" onmouseover="trocaCidades()" href="#">Ler</a>
+          <a id="Paises" onmouseover="trocaPaises()" href="#">Atualizar</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>  </a>
+</div>
+</nav>
+<section>
+  <article>
+<div class="container" id="criar">
+  <form id="contact" action="" method="post">
+    <h3>Criar</h3>
+    <h4>Informe os dados</h4>
+    <fieldset>
+      <input placeholder="Nome" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Modelo" type="text" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Ano" type="text" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Criar</button>
+    </fieldset>
+  </form>
+</div>
+<!--Deletar-->
+<div class="container" id="deletar">  
+  <form id="contact" action="" method="post">
+    <h3>Deletar</h3>
+    <h4>Escolha qual carro deseja deletar</h4>
+    <fieldset>
+      <input placeholder="Deletar" type="search" tabindex="1" required autofocus>
+    </fieldset>
+  </form>
+</div>
+<!--Ler-->
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Pesquise</h3>
+    <fieldset>
+      <input placeholder="Pesquisar" type="search" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+  </form>
+</div>
+<!--Atualizar-->
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Atualizar</h3>
+    <h4>Informe o ID do item que deseja atualizar</h4>
+    <fieldset>
+      <input placeholder="Atualizar" type="search" tabindex="1" required autofocus>
+    </fieldset>
+  </form>
+</div>
+</article>
+</section>
+</body>
+</html>
