@@ -1,8 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Ubuntu, sans-serif; }
 
 .btn {
     margin-right: 10px;
+}
+
+#main {
+    margin-top: 100px;
+}
+
+.btn-sm {
+    margin-top: -50px;
+}
+
+a{
+    margin-right: 10px;
+    
+    i.edit-link {
+        color: #999900;
+    }
+
+    i.delete-link {
+        color: darkred;
+    }
 }

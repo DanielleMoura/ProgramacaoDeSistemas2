@@ -3,8 +3,8 @@
         <h1>Pais: {{pais.id}}</h1>
     </div>
     <div class="panel-body">
-        <table class="table table-striped table-bordered">
-            <thead>
+        <table class="table table-striped">
+            <thead class="thead-light">
                 <tr>
                     <th>NOME</th>
                     <th>CONTINENTE</th>
@@ -18,12 +18,21 @@
                   <td>{{pais.continente}}</td>
                   <td>{{pais.populacao}}</td>
                   <td>
-                    <button (click)="editPais(pais.id)">Editar</button>
-                    <button (click)="deletePais(pais.id)">Deletar</button>
+                    <a (click)="editPais(pais.id)">
+                        <i class="material-icons edit-link">
+                            edit
+                        </i>
+                    </a>
+                    <a (click)="deletePais(pais.id)">
+                        <i class="material-icons delete-link">
+                            block
+                        </i>
+                    </a>
                   </td>
                 </tr>
             </tbody>
         </table>
+        <a class="btn btn-link float-right" [routerLink]="['/paises']">Voltar</a>
     </div>
   </div>
     
