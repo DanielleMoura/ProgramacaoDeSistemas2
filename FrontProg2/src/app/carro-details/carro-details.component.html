@@ -3,29 +3,38 @@
       <h1>Carro: {{carro.id}}</h1>
   </div>
   <div class="panel-body">
-      <table class="table table-striped table-bordered">
-          <thead>
-              <tr>
-                  <th>MODELO</th>
-                  <th>MARCA</th>
-                  <th>ANO</th>
-                  <th>CATEGORIA</th>
-                  <th>AÇÕES</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td>{{carro.modelo}}</td>
-                <td>{{carro.marca}}</td>
-                <td>{{carro.ano}}</td>
-                <td>{{carro.categoria}}</td>
-                <td>
-                    <button (click)="editCarro(carro.id)">Editar</button>
-                    <button (click)="deleteCarro(carro.id)">Deletar</button>
-                </td>
-              </tr>
-          </tbody>
-      </table>
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>MODELO</th>
+                <th>MARCA</th>
+                <th>ANO</th>
+                <th>CATEGORIA</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{carro.modelo}}</td>
+              <td>{{carro.marca}}</td>
+              <td>{{carro.ano}}</td>
+              <td>{{carro.categoria}}</td>
+              <td>
+                  <a (click)="editCarro(carro.id)">
+                    <i class="material-icons edit-link">
+                        edit
+                    </i>
+                  </a>
+                  <a (click)="deleteCarro(carro.id)">
+                    <i class="material-icons delete-link">
+                        block
+                    </i>
+                  </a>
+              </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-link float-right" [routerLink]="['/paises']">Voltar</a>
   </div>
 </div>
   

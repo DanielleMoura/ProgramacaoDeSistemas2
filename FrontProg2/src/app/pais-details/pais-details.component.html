@@ -1,38 +1,38 @@
 <div class="panel panel-default" *ngIf="pais">
-    <div class="panel-heading">
-        <h1>Pais: {{pais.id}}</h1>
-    </div>
-    <div class="panel-body">
-        <table class="table table-striped">
-            <thead class="thead-light">
-                <tr>
-                    <th>NOME</th>
-                    <th>CONTINENTE</th>
-                    <th>POPULAÇÃO</th>
-                    <th>AÇÕES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td>{{pais.nome}}</td>
-                  <td>{{pais.continente}}</td>
-                  <td>{{pais.populacao}}</td>
-                  <td>
-                    <a (click)="editPais(pais.id)">
-                        <i class="material-icons edit-link">
-                            edit
-                        </i>
-                    </a>
-                    <a (click)="deletePais(pais.id)">
-                        <i class="material-icons delete-link">
-                            block
-                        </i>
-                    </a>
-                  </td>
-                </tr>
-            </tbody>
-        </table>
-        <a class="btn btn-link float-right" [routerLink]="['/paises']">Voltar</a>
-    </div>
+  <div class="panel-heading">
+      <h1>Pais: {{pais.id}}</h1>
   </div>
+  <div class="panel-body">
+      <table class="table table-striped">
+          <thead class="thead-light">
+              <tr>
+                  <th>NOME</th>
+                  <th>CONTINENTE</th>
+                  <th>POPULAÇÃO</th>
+                  <th>AÇÕES</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>{{pais.nome}}</td>
+                <td>{{pais.continente}}</td>
+                <td>{{pais.populacao}}</td>
+                <td>
+                  <a (click)="editPais(pais.id)">
+                      <i class="material-icons edit-link">
+                          edit
+                      </i>
+                  </a>
+                  <a (click)="deletePais(pais.id)">
+                      <i class="material-icons delete-link">
+                          block
+                      </i>
+                  </a>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+      <a class="btn btn-link float-right" [routerLink]="['/paises']">Voltar</a>
+  </div>
+</div>
     
