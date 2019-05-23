@@ -22,8 +22,7 @@
                 <td>{{carro.ano}}</td>
                 <td>{{carro.categoria}}</td>
                 <td>
-                    <button (click)="updateCarro(carro.id)">Edit</button>
-                    <button (click)="deleteCarro(carro.id)">Delete</button>
+                    <button [routerLink]="['/carro-details', carro.id]">Detalhes</button>
                 </td>
               </tr>
           </tbody>

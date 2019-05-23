@@ -7,25 +7,29 @@ import { Carro } from './carro';
 })
 
 export class CarroService {
-  private carrosUrl: string;
+  private carro: Carro;
+  private carrosUrl = 'http://localhost:8080/api/carros';
 
   constructor(private http: HttpClient) {
-    this.carrosUrl = 'http://localhost:8080/api/carros';
   }
 
-  public findAll(): Observable<Carro[]> {
+  getCarros(): Observable<Carro[]> {
     return this.http.get<Carro[]>(this.carrosUrl);
   }
 
-  createCarro(carro: Carro) {
-    return this.http.post(`${this.carrosUrl}`, carro);
+  getCarro(id: number): Observable<Carro> {
+    return this.http.get<Carro>(`${this.carrosUrl}/${id}`);
   }
 
-  updateCarro(id: number, value: any) {
-    return this.http.put(`${this.carrosUrl}/${id}`, value);
+  createCarro(carro): Observable<Carro> {
+    return this.http.post<Carro>(this.carrosUrl, carro);
   }
 
-  deleteCarro(id: number) {
-    return this.http.delete(`${this.carrosUrl}/${id}`, { responseType: 'text' });
+  updateCarro(id: number, carro): Observable<any> {
+    return this.http.put(`${this.carrosUrl}/${id}`, carro);
+  }
+
+  deleteCarro(id: number): Observable<Carro> {
+    return this.http.delete<Carro>(`${this.carrosUrl}/${id}`, { responseType: 'json' });
   }
 }
