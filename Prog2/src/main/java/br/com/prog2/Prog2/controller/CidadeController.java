@@ -47,7 +47,7 @@ public class CidadeController {
 	}
 
 	// Atualizando Cidade
-	@PutMapping("/cidade/{id}")
+	@PutMapping("/cidades/{id}")
 	public Cidade updateCidade(@PathVariable(value = "id") Long cidadeId, @Valid @RequestBody Cidade cidadeDetails) {
 
 		cidadeRepository.findById(cidadeId).orElseThrow(() -> new ResourceNotFoundException("Cidade", "id", cidadeId));

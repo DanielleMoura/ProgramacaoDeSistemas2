@@ -26,6 +26,7 @@ import { CidadeCreateComponent } from './cidade-create/cidade-create.component';
 import { CidadeEditComponent } from './cidade-edit/cidade-edit.component';
 import { CidadeListComponent } from './cidade-list/cidade-list.component';
 import { CidadeDetailsComponent } from './cidade-details/cidade-details.component';
+import { CidadeService } from './cidade.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { CidadeDetailsComponent } from './cidade-details/cidade-details.componen
     MatCardModule,
     MatFormFieldModule
   ],
-  providers: [CarroService],
+  providers: [CarroService, CidadeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
