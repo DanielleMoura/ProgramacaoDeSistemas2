@@ -31,6 +31,8 @@ import { PaisCreateComponent } from './pais-create/pais-create.component';
 import { PaisDetailsComponent } from './pais-details/pais-details.component';
 import { PaisEditComponent } from './pais-edit/pais-edit.component';
 import { PaisListComponent } from './pais-list/pais-list.component';
+import { MainComponent } from './main/main.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { PaisListComponent } from './pais-list/pais-list.component';
     PaisDetailsComponent,
     PaisEditComponent,
     PaisListComponent,
+    MainComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

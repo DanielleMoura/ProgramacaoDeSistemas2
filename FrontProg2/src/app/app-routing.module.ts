@@ -12,8 +12,11 @@ import { PaisListComponent } from './pais-list/pais-list.component';
 import { PaisDetailsComponent } from './pais-details/pais-details.component';
 import { PaisCreateComponent } from './pais-create/pais-create.component';
 import { PaisEditComponent } from './pais-edit/pais-edit.component';
+import { MainComponent } from './main/main.component';
+
 
 const routes: Routes = [
+  { path: '', component: MainComponent},
   { path: 'carros',
     component: CarroListComponent,
     data: { title: 'Listagem de Carros' }

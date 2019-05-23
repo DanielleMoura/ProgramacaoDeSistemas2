@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Ubuntu, sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Ubuntu, sans-serif;
+ }
 
 .btn {
     margin-right: 10px;
@@ -26,4 +29,8 @@ a{
     i.delete-link {
         color: darkred;
     }
+}
+
+.card {
+    margin-top: -70px;
 }
