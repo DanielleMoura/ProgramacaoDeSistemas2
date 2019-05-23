@@ -22,6 +22,10 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
+import { CidadeCreateComponent } from './cidade-create/cidade-create.component';
+import { CidadeEditComponent } from './cidade-edit/cidade-edit.component';
+import { CidadeListComponent } from './cidade-list/cidade-list.component';
+import { CidadeDetailsComponent } from './cidade-details/cidade-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import {
     CarroDetailsComponent,
     CarroCreateComponent,
     CarroEditComponent,
+    CidadeCreateComponent,
+    CidadeEditComponent,
+    CidadeListComponent,
+    CidadeDetailsComponent,
   ],
   imports: [
     BrowserModule,
