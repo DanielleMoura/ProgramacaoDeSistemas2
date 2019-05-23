@@ -27,6 +27,10 @@ import { CidadeEditComponent } from './cidade-edit/cidade-edit.component';
 import { CidadeListComponent } from './cidade-list/cidade-list.component';
 import { CidadeDetailsComponent } from './cidade-details/cidade-details.component';
 import { CidadeService } from './cidade.service';
+import { PaisCreateComponent } from './pais-create/pais-create.component';
+import { PaisDetailsComponent } from './pais-details/pais-details.component';
+import { PaisEditComponent } from './pais-edit/pais-edit.component';
+import { PaisListComponent } from './pais-list/pais-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { CidadeService } from './cidade.service';
     CidadeEditComponent,
     CidadeListComponent,
     CidadeDetailsComponent,
+    PaisCreateComponent,
+    PaisDetailsComponent,
+    PaisEditComponent,
+    PaisListComponent,
   ],
   imports: [
     BrowserModule,

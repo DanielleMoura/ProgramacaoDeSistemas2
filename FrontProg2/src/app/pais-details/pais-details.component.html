@@ -1,0 +1,29 @@
+<div class="panel panel-default" *ngIf="pais">
+    <div class="panel-heading">
+        <h1>Pais: {{pais.id}}</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>CONTINENTE</th>
+                    <th>POPULAÇÃO</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>{{pais.nome}}</td>
+                  <td>{{pais.continente}}</td>
+                  <td>{{pais.populacao}}</td>
+                  <td>
+                    <button (click)="editPais(pais.id)">Editar</button>
+                    <button (click)="deletePais(pais.id)">Deletar</button>
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+    
