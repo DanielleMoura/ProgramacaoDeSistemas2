@@ -1,5 +1,6 @@
 package br.com.prog2.Prog2.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -43,6 +44,16 @@ public class PaisController {
 	@GetMapping("/paises/{id}")
 	public Pais getPaisById(@PathVariable(value = "id") Long paisId) {
 		return paisRepository.findById(paisId).orElseThrow(() -> new ResourceNotFoundException("País", "id", paisId));
+	}
+	
+	// Busca um Pais pelo 'id'
+	@GetMapping("/paises/filter/{filter}/{query}")
+	public List<Pais> getPaisesByContinente(@PathVariable(value = "filter") String filter, @PathVariable(value = "query") String query ) {
+		if (filter.equals("continente")) {
+			return paisRepository.findByContinenteContainingIgnoreCase(query);
+		}
+		
+		return new ArrayList<>();
 	}
 
 	// Atualizando País

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CidadeListComponent implements OnInit {
   cidades: Cidade[] = [];
+  flag = false;
   constructor(private cidadeService: CidadeService, private router: Router) { }
 
   ngOnInit() {
@@ -21,6 +22,26 @@ export class CidadeListComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+  }
+
+  voltar() {
+    this.flag = false;
+    this.ngOnInit();
+  }
+
+  searchFilter(pesquisa) {
+    if (pesquisa == null) {
+      this.ngOnInit();
+    } else {
+      this.flag = true;
+      this.cidadeService.getCidadesFilters(pesquisa)
+      .subscribe(res => {
+        this.cidades = res;
+        console.log(this.cidades);
+      }, err => {
+        console.log(err);
+      });
+    }
   }
 
 }

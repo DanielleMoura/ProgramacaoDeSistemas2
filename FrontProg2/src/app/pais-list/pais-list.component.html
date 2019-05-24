@@ -1,8 +1,12 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>Países</h2>
-    <div class="float-right">
-      <a class="btn btn-success btn-sm" [routerLink]="['/pais-create']">+ Adicionar um País</a>
+    <div class="float-right pesquisa">
+        <input class="input-pesquisa" type="text" [(ngModel)]="pesquisa">
+        <button class="btn btn-primary btn-sm" type="button" (click)="searchFilter(pesquisa)">
+            Buscar
+        </button>
+        <a class="btn btn-success btn-sm" [routerLink]="['/pais-create']">+ Adicionar um País</a>
     </div>
   </div>
   <div class="panel-body">
@@ -32,6 +36,7 @@
           </tr>
         </tbody>
     </table>
+    <a *ngIf="flag" class="btn btn-link float-right" (click)="voltar()">Voltar</a>
   </div>
 </div>
       

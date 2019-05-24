@@ -1,5 +1,6 @@
 package br.com.prog2.Prog2.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -58,6 +59,16 @@ public class CidadeController {
 //		    carro.setCategoria(carro.getCategoria());
 
 		return cidadeRepository.save(cidadeDetails);
+	}
+	
+	// Busca uma Cidade pelo nome
+	@GetMapping("/cidades/filter/{filter}/{query}")
+	public List<Cidade> getCidadesByNome(@PathVariable(value = "filter") String filter, @PathVariable(value = "query") String query ) {
+		if (filter.equals("nome")) {
+			return cidadeRepository.findByNomeContainingIgnoreCase(query);
+		}
+		
+		return new ArrayList<>();
 	}
 
 	// Deletar uma Cidade

@@ -17,6 +17,10 @@ export class PaisService {
     return this.http.get<Pais[]>(this.paisesUrl);
   }
 
+  getPaisesFilters(filters): Observable<Pais[]> {
+    return this.http.get<Pais[]>(this.paisesUrl + '/filter/continente/' + filters);
+  }
+
   getPais(id: number): Observable<Pais> {
     return this.http.get<Pais>(`${this.paisesUrl}/${id}`);
   }

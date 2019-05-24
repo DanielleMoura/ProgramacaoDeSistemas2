@@ -18,6 +18,10 @@ export class CarroService {
     return this.http.get<Carro[]>(this.carrosUrl);
   }
 
+  getCarrosFilters(filters): Observable<Carro[]> {
+    return this.http.get<Carro[]>(this.carrosUrl + '/filter/modelo/' + filters);
+  }
+
   getCarro(id: number): Observable<Carro> {
     return this.http.get<Carro>(`${this.carrosUrl}/${id}`);
   }

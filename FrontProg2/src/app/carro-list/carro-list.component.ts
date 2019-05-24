@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CarroListComponent implements OnInit {
   carros: Carro[] = [];
+  flag = false;
   constructor(private carroService: CarroService, private router: Router) { }
 
   ngOnInit() {
@@ -21,5 +22,25 @@ export class CarroListComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+  }
+
+  voltar() {
+    this.flag = false;
+    this.ngOnInit();
+  }
+
+  searchFilter(pesquisa) {
+    if (pesquisa == null) {
+      this.ngOnInit();
+    } else {
+      this.flag = true;
+      this.carroService.getCarrosFilters(pesquisa)
+      .subscribe(res => {
+        this.carros = res;
+        console.log(this.carros);
+      }, err => {
+        console.log(err);
+      });
+    }
   }
 }

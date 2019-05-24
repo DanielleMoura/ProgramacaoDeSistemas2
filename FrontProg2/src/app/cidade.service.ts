@@ -17,6 +17,10 @@ export class CidadeService {
     return this.http.get<Cidade[]>(this.cidadesUrl);
   }
 
+  getCidadesFilters(filters): Observable<Cidade[]> {
+    return this.http.get<Cidade[]>(this.cidadesUrl + '/filter/nome/' + filters);
+  }
+
   getCidade(id: number): Observable<Cidade> {
     return this.http.get<Cidade>(`${this.cidadesUrl}/${id}`);
   }

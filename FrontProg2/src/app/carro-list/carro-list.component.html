@@ -1,38 +1,43 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-      <h2>Carros</h2>
-  </div>
-  <div class="float-right">
+    <div class="panel-heading">
+        <h2>Carros</h2>
+    </div>
+    <div class="float-right pesquisa">
+        <input class="input-pesquisa" type="text" [(ngModel)]="pesquisa">
+        <button class="btn btn-primary btn-sm" type="button" (click)="searchFilter(pesquisa)">
+            Buscar
+        </button>
         <a class="btn btn-success btn-sm" [routerLink]="['/carro-create']">+ Adicionar um Carro</a>
     </div>
-  <div class="panel-body">
-      <table class="table table-striped">
-          <thead class="thead-light">
-              <tr>
-                  <th>ID</th>
-                  <th>MODELO</th>
-                  <th>MARCA</th>
-                  <th>ANO</th>
-                  <th>CATEGORIA</th>
-                  <th>AÇÕES</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let carro of carros">
-                <td>{{carro.id}}</td>
-                <td>{{carro.modelo}}</td>
-                <td>{{carro.marca}}</td>
-                <td>{{carro.ano}}</td>
-                <td>{{carro.categoria}}</td>
-                <td>
-                    <a [routerLink]="['/carro-details', carro.id]">
-                        <i class="material-icons">
-                            description
-                        </i>
-                    </a>
-                </td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>MODELO</th>
+                    <th>MARCA</th>
+                    <th>ANO</th>
+                    <th>CATEGORIA</th>
+                    <th>AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let carro of carros">
+                    <td>{{carro.id}}</td>
+                    <td>{{carro.modelo}}</td>
+                    <td>{{carro.marca}}</td>
+                    <td>{{carro.ano}}</td>
+                    <td>{{carro.categoria}}</td>
+                    <td>
+                        <a [routerLink]="['/carro-details', carro.id]">
+                            <i class="material-icons">
+                                description
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a *ngIf="flag" class="btn btn-link float-right" (click)="voltar()">Voltar</a>
+    </div>
 </div>

@@ -1,5 +1,10 @@
 package br.com.prog2.Prog2.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,13 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.prog2.Prog2.repository.CarroRepository;
 import br.com.prog2.Prog2.exception.ResourceNotFoundException;
 import br.com.prog2.Prog2.model.Carro;
-
-import java.util.List;
-
-import javax.validation.Valid;
+import br.com.prog2.Prog2.repository.CarroRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -44,6 +45,16 @@ public class CarroController {
 	public Carro getCarroById(@PathVariable(value = "id") Long carroId) {
 		return carroRepository.findById(carroId)
 				.orElseThrow(() -> new ResourceNotFoundException("Carro", "id", carroId));
+	}
+	
+	// Busca um Carro pelo modelo
+	@GetMapping("/carros/filter/{filter}/{query}")
+	public List<Carro> getCarrosByModelo(@PathVariable(value = "filter") String filter, @PathVariable(value = "query") String query ) {
+		if (filter.equals("modelo")) {
+			return carroRepository.findByModeloContainingIgnoreCase(query);			
+		}
+		
+		return new ArrayList<>();
 	}
 
 	// Atualizando Carro
